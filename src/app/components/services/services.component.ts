@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Data } from '../../models/data';
 
 @Component({
   selector: 'app-services',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './services.component.css'
 })
 export class ServicesComponent {
+
+  servicesData: Data = new Data();
+
 
 }
