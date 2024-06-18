@@ -1,26 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import { Data } from '../../Interfaces/data';
 
 @Component({
   selector: 'app-single-service',
   templateUrl: './single-service.component.html',
   styleUrl: './single-service.component.css'
 })
-export class SingleServiceComponent {
+export class SingleServiceComponent implements OnInit{
 
-  service:any
-
-  constructor(
-    private route: ActivatedRoute, private homeComponent: HomeComponent
-
-  ) { }
+  service: Data | null = null;
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
-      this.homeComponent.getServiceById(id).subscribe((service: any) => {
-        this.service = service;
-      });
-    });
+    this.getData();
   }
+
+     getData(): Data | null {
+      const data = sessionStorage.getItem("data");
+      return this.service = data ? JSON.parse(data) : null;
+    }
+
+
 }

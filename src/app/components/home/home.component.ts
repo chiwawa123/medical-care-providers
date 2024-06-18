@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '../../models/data';
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,7 @@ import { Observable, of } from 'rxjs';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  constructor(private router:Router){}
 
   servicesData: Data = new Data();
 
@@ -15,10 +17,13 @@ export class HomeComponent implements OnInit {
 
   }
 
-  getServiceById(id: number) {
-    const service = this.servicesData.services.find(service => service.id === id);
-    return of(service);
+  setData(data: any) {
+    sessionStorage.setItem("data", JSON.stringify(data));
+    this.router.navigate(['/service']);
+
   }
+
+
 
 
 

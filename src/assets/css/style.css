@@ -132,8 +132,13 @@ h6,
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 600;
+
     outline: none;
     transition: .5s;
+}
+
+.navbar-dark{
+  background: #00000057 !important;
 }
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
@@ -231,7 +236,7 @@ h6,
     }
 
     .carousel-caption h1 {
-        font-size: 30px;
+        font-size: 14px;
         font-weight: 600 !important;
     }
 }
