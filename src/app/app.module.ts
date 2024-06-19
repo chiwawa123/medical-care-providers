@@ -11,6 +11,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SingleServiceComponent } from './components/single-service/single-service.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { FaqsComponent } from './components/faqs/faqs.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added here
   ],
   providers: [],
   bootstrap: [AppComponent]
